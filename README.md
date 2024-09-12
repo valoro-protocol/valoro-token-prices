@@ -68,7 +68,7 @@ pub type IndexTokenInfo<M> = MultiValue11<
 >;
 ```
 
-Simply, NAV divided by SUPPLY results the Token price:
+Simply, `NAV` divided by `SUPPLY` results the Token price:
 ```
 Price = NAV / SUPPLY
 ```
