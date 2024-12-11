@@ -68,6 +68,15 @@ pub type IndexTokenInfo<M> = MultiValue11<
 >;
 ```
 
+```
+pub struct FundTokenStructure<M: ManagedTypeApi> {
+    pub token_identifier: TokenIdentifier<M>,
+    pub decimals: u32,
+    pub weight: u64,
+    pub balance: BigUint<M>,
+}
+```
+
 Simply, `NAV` divided by `SUPPLY` results the Token price:
 ```
 Price = NAV / SUPPLY
