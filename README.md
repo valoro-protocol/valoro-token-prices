@@ -81,3 +81,26 @@ Simply, `NAV` divided by `SUPPLY` results the Token price:
 ```
 Price = NAV / SUPPLY
 ```
+
+### Storage
+
+```
+#[storage_mapper("tokenId")]
+fn index_token(&self) -> FungibleTokenMapper<Self::Api>;
+
+#[view(getIndexTokensMinted)]
+#[storage_mapper("indexTokensMinted")]
+fn index_tokens_minted(&self) -> SingleValueMapper<BigUint>;
+
+#[view(getIndexTokenName)]
+#[storage_mapper("indexTokenName")]
+fn index_token_name(&self) -> SingleValueMapper<ManagedBuffer>;
+
+#[view(getFundTokens)]
+#[storage_mapper("fundTokens")]
+fn fund_tokens(&self) -> UnorderedSetMapper<TokenIdentifier>;
+
+#[view(getFundTokenWeight)]
+#[storage_mapper("fundTokenWeight")]
+fn fund_token_weight(&self, token: &TokenIdentifier) -> SingleValueMapper<u64>;
+```
